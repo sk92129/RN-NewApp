@@ -2,16 +2,21 @@
  * @format
  */
 
-import 'react-native';
 import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react-native';
 import App from '../App';
 
-// Note: import explicitly to use the types shipped with jest.
-import {it} from '@jest/globals';
+describe('App', () => {
+  it('renders correctly', () => {
+    render(<App />);
+  });
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
-
-it('renders correctly', () => {
-  renderer.create(<App />);
+  // Add more test cases based on your App component functionality
+  // For example, if you have a button:
+  // it('handles button press', () => {
+  //   render(<App />);
+  //   const button = screen.getByText('Press me');
+  //   fireEvent.press(button);
+  //   expect(screen.getByText('Button pressed!')).toBeTruthy();
+  // });
 });
